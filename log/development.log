@@ -40,3 +40,116 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from require at /Users/joemullen/.rvm/rubies/ruby-2.3.3/lib/ruby/site_ruby/2.3.0/rubygems/core_ext/kernel_require.rb:54)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here..."], ["created_at", "2019-02-04 15:37:41.624619"], ["updated_at", "2019-02-04 15:37:41.624619"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for ::1 at 2019-02-04 10:39:33 -0500
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/joemullen/.rvm/gems/ruby-2.3.3/gems/activerecord-5.0.7.1/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/joemullen/.rvm/gems/ruby-2.3.3/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/joemullen/.rvm/gems/ruby-2.3.3/gems/railties-5.0.7.1/lib/rails/templates/rails/welcome/index.html.erb (4.5ms)
+Completed 200 OK in 24ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for ::1 at 2019-02-04 10:39:39 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 473ms (Views: 464.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-02-04 10:39:44 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 26ms (Views: 21.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-02-04 10:39:48 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dYNERDahzElgMT4aJ/loa4vEYJPinP5oTZXL2Ov+q8cK1hSuUMhabhEZYVvKXlCmh89q0tdlgXkO9g5UTqL60Q==", "title"=>"post 1", "description"=>"this is a post", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "post 1"], ["description", "this is a post"], ["created_at", "2019-02-04 15:39:48.826064"], ["updated_at", "2019-02-04 15:39:48.826064"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 110ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-02-04 10:40:00 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-02-04 10:40:54 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+4qaGYPA5KBMetTRlQiMhsWwx4LBSiGLc0QMKI4WR1CE38rz5alyhz1Si5B4r7RLybvNw/SzXpowJ8mkK0oWRg==", "title"=>"hmmm", "description"=>"weird", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hmmm"], ["description", "weird"], ["created_at", "2019-02-04 15:40:54.173054"], ["updated_at", "2019-02-04 15:40:54.173054"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 125ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-02-04 10:41:00 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2019-02-04 10:41:03 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"weee", "description"=>"eweeewe"}, "authenticity_token"=>"uG7+Q83EinYqf4TwqM7R2mwNunInsErU56+2ZzjTvyjHO66pq60cUVtX27FFaekXYAawMxJJNcWkzHPrnY/uPg=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-02-04 15:41:03.808644"], ["updated_at", "2019-02-04 15:41:03.808644"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 106ms (ActiveRecord: 2.2ms)
+
+
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/posts/new" for ::1 at 2019-02-04 10:41:55 -0500
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/joemullen/.rvm/gems/ruby-2.3.3/gems/activerecord-5.0.7.1/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 287ms (Views: 266.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2019-02-04 10:42:00 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"post"=>{"title"=>"bundle", "description"=>"install"}, "authenticity_token"=>"85B4dsvbNW0rLQ88z86S2AZuLvNV494PlpF2kpEjqTqMxSicrbKjSloFUH0iaaoVCmUksmAaoR7V8rMeNH/4LA=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-02-04 15:42:00.336440"], ["updated_at", "2019-02-04 15:42:00.336440"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 111ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2019-02-04 10:43:41 -0500
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/joemullen/.rvm/gems/ruby-2.3.3/gems/activerecord-5.0.7.1/lib/active_record/railtie.rb:113)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 274ms (Views: 255.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2019-02-04 10:43:47 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"title"=>"NEW POSTS", "description"=>"NEWWW", "authenticity_token"=>"JNVHlOdd6Ntmb15BOn3jGS8VVhZ5a8rraeYweJ3xQ5BbgBd+gTR+/BdHAQDX2tvUIx5cV0yStfoqhfX0OK0Shg=="}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "NEW POSTS"], ["description", "NEWWW"], ["created_at", "2019-02-04 15:43:47.042308"], ["updated_at", "2019-02-04 15:43:47.042308"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 109ms (ActiveRecord: 2.4ms)
+
+
